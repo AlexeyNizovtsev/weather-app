@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@400;700&family=Titillium+Web&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #f8faff;
+  background: #292a2d;
+}
+
+main {
+  margin: 0px auto;
+  max-width: 800px;
+  padding: 1rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.control {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+button {
+  padding: 0.8rem 2rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+  background: #3e5ae1;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background: #6b7ac2;
+  color: white;
+}

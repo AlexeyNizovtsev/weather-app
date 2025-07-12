@@ -1,0 +1,21 @@
+header {
+  width: 100%;
+  height: 50px;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #525252;
+  border-radius: 10px;
+}
+
+.react-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  padding: 5px;
+  border-radius: 10px;
+  background: radial-gradient(rgb(0, 170, 255), black 80%);
+}
