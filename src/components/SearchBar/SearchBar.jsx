@@ -1,6 +1,7 @@
 import { useState } from "react";
+import "./SearchBar.css";
 
-export default function SearchBar({ onSearch }) {
+export default function SearchBar({ onSearch, defaultCity }) {
   const [value, setValue] = useState("");
   const trimmedValue = value.trim();
 
@@ -17,16 +18,16 @@ export default function SearchBar({ onSearch }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="search">Поиск города:</label>
       <input
         type="text"
         id="search"
-        className="control"
+        className="search-input"
+        placeholder="City..."
         value={value}
         onChange={handleChange}
       />
       <button disabled={!trimmedValue} type="submit">
-        Искать
+        Search
       </button>
     </form>
   );

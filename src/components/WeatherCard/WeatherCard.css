@@ -1,0 +1,91 @@
+/* WeatherCard.css */
+.centered_text {
+  text-align: center;
+}
+
+.weather-card {
+  max-width: 800px;
+  margin: 2rem 0;
+  padding: 2rem 14rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #3a47d5 0%, #00d2ff 100%);
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.weather-card.night {
+  background: linear-gradient(135deg, #0d1038 20%, #16798f 100%);
+}
+
+.weather-header {
+  margin-bottom: 1.5rem;
+}
+
+.weather-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.weather-date {
+  margin: 0.5rem 0 0;
+  opacity: 0.8;
+}
+
+.weather-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.temp-current {
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.temp-feelslike {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.weather-image {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+.weather-description {
+  margin: 0.5rem 0 0;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .weather-card {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .weather-main {
+    flex-direction: column;
+  }
+
+  .temperature-block {
+    margin-bottom: 1.5rem;
+  }
+}
