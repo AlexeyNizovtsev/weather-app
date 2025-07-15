@@ -6,7 +6,7 @@ import WeatherDetails from "./components/WeatherDetails/WeatherDetails";
 import.meta.env.VITE_API_KEY;
 
 export default function App() {
-  const [defaultCity, setDefaultCity] = useState("Moscow");
+  const [defaultCity, setDefaultCity] = useState("Москва");
   const [weather, setWeather] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -23,11 +23,11 @@ export default function App() {
 
         (error) => {
           console.error("Ошибка геолокации:", error);
-          fetchWeather("Moscow");
+          fetchWeather(defaultCity);
         }
       );
     } else {
-      fetchWeather("Moscow");
+      fetchWeather(defaultCity);
     }
   }, []);
 
@@ -43,7 +43,7 @@ export default function App() {
       fetchWeather(data.location.name);
     } catch (error) {
       console.error("Ошибка получения города:", error);
-      fetchWeather("Москва");
+      fetchWeather(defaultCity);
     }
   };
 
