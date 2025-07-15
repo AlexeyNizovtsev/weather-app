@@ -37,7 +37,7 @@
 - Зарегистрируйтесь на сайте https://www.weatherapi.com
 - Получите ваш api ключ
 - Создайте файл .env в корне проекта:
-  - VITE*WEATHER_API_KEY=ваш*ключ_от_weatherapi
+  - VITE_API_KEY=ваш_ключ_от_weatherapi
 
 ### Запуск
 
