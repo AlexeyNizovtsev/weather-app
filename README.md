@@ -29,9 +29,9 @@
 
 ### Установка
 
-git clone https://github.com/AlexeyNizovtsev/weather-app.git
-cd weather-app
-npm install
+- git clone https://github.com/AlexeyNizovtsev/weather-app.git
+- cd weather-app
+- npm install
 
 ### Настройка окружения
 
