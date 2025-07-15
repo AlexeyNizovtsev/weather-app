@@ -9,13 +9,45 @@ header {
   border-radius: 10px;
 }
 
-.react-container {
+.lang-switch {
+  border: 2px solid #525252;
+  border-radius: 10px;
+  width: 10rem;
+  height: 2rem;
   display: flex;
-  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  overflow: hidden;
 }
 
-.logo {
-  padding: 5px;
-  border-radius: 10px;
-  background: radial-gradient(rgb(0, 170, 255), black 80%);
+.lang-switch > button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+  transition: color 0.8s ease;
+}
+
+.lang-switch > button.active {
+  color: #000;
+}
+
+.slider {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(90deg, #3a47d5, #00d2ff);
+  border-radius: 8px;
+  z-index: 1;
+  transition: transform 0.8s cubic-bezier(1, -0.55, 0.265, 1.55);
+}
+
+.slider[data-lang="en"] {
+  transform: translateX(100%);
 }

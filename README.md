@@ -1,12 +1,87 @@
-# React + Vite
+# 🌦️ Weather App with React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Многофункциональное приложение для просмотра погоды с анимированными элементами и поддержкой двух языков.
 
-Currently, two official plugins are available:
+![Скриншот приложения](./public/screenshot.png)
+![Скриншот приложения2](./public/screenshot1.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Особенности
 
-## Expanding the ESLint configuration
+- **Текущая погода** по данным WeatherAPI
+- **Определение местоположения** (геолокация)
+- **Мультиязычный интерфейс** (русский/английский)
+- **Анимированные элементы**:
+  - Плавные переходы между состояниями
+  - Эффект "морозного стекла" (`backdrop-filter`)
+  - Интерактивный переключатель языков
+- **Адаптивный дизайн** (мобильные/десктоп)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Технологии
+
+<p align="left">
+  <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white" alt="React">
+  <img src="https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/WeatherAPI-6DB33F?logo=openweathermap&logoColor=white" alt="WeatherAPI">
+</p>
+
+## 🚀 Быстрый старт
+
+### Установка
+
+git clone https://github.com/AlexeyNizovtsev/weather-app.git
+cd weather-app
+npm install
+
+### Настройка окружения
+
+- Зарегистрируйтесь на сайте https://www.weatherapi.com
+- Получите ваш api ключ
+- Создайте файл .env в корне проекта:
+  - VITE*WEATHER_API_KEY=ваш*ключ_от_weatherapi
+
+### Запуск
+
+npm run dev
+
+### Сборка для production
+
+npm run build
+
+## 🌍 Мультиязычность
+
+Приложение поддерживает два языка:
+
+- Русский (по умолчанию)
+- Английский
+
+Реализовано через Context API с динамической загрузкой переводов.
+
+## 🎨 Анимации в проекте
+
+| Элемент              | Анимация          | Ключевые кадры (`@keyframes`)                                                             | Свойства            | Длительность | Тайминг-функция                       | Эффект                 |
+| -------------------- | ----------------- | ----------------------------------------------------------------------------------------- | ------------------- | ------------ | ------------------------------------- | ---------------------- |
+| Загрузка карточки    | `pulseOpacity`    | 0%: opacity: 0.6<br>50%: opacity: 0.2<br>100%: opacity: 0.6                               | opacity             | 1s           | `ease-in-out`                         | Пульсация прозрачности |
+| Появление элементов  | `fadeIn`          | from: opacity: 0, transform: translateY(20px)<br>to: opacity: 1, transform: translateY(0) | opacity, transform  | 1s           | `ease-out`                            | Плавное всплытие       |
+| Дневной фон карточки | `gradient-pulse`  | 0%,100%: opacity: 0<br>50%: opacity: 1                                                    | opacity, background | 10s          | `ease-in-out`                         | Мерцание градиента     |
+| Ночной фон карточки  | `gradient-pulse`  | 0%,100%: opacity: 0<br>50%: opacity: 1                                                    | opacity, background | 10s          | `ease-in-out`                         | Мерцание градиента     |
+| Переключатель языка  | slider transition | -                                                                                         | transform           | 0.8s         | `cubic-bezier(1, -0.55, 0.265, 1.55)` | Эффект "пружины"       |
+
+### Особенности реализации:
+
+- **Для фонов карточки** используется комбинация:
+
+  - .weather-card::before { /_ основной градиент _/ }
+  - .weather-card::after { /_ анимируемый поверх _/ }
+
+- **Переключатель языка имеет**:
+
+  - Плавное изменение цвета текста (transition: color 0.8s ease)
+  - Сложную траекторию движения ползунка через cubic-bezier
+
+- **Все анимации работают на CSS без JavaScript**
+
+## 🔧 Возможные улучшения
+
+- Добавить прогноз на 3 дня
+- Реализовать выбор темы (темная/светлая)

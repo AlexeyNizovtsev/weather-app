@@ -70,10 +70,8 @@ export default function App() {
     <>
       <Header />
       <main>
-        {loading && <p>Loading...</p>}
-        {!loading && <WeatherCard weather={weather} />}
-
-        <WeatherDetails weather={weather} />
+        <WeatherCard weather={weather} loading={loading} />
+        <WeatherDetails weather={weather} loading={loading} />
         <SearchBar onSearch={fetchWeather} defaultCity={defaultCity} />
       </main>
     </>
